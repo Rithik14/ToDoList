@@ -10,11 +10,11 @@ mongoose.set('strictQuery', false);
 const app = express();
 let items =["Buy Food","Cook Food","Eat Food"];
 let worklist = [];
-app.set('view engine', 'ejs');  //this tell our app which is generated using express to use ejs as its view engine..
+app.set('view engine', 'ejs'); 
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));//this tell the express to access the public file
-mongoose.connect("mongodb://localhost:27017/todolistDB");//this will create the database is doesn't exist
+app.use(express.static("public"));
+mongoose.connect("mongodb://localhost:27017/todolistDB");
 
 const itemsSchema = {
  name: String
